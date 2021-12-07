@@ -52,12 +52,15 @@
 
                 // Method - age()
                 // return this patients age relative to the present Date
-                this.age = function () {
-                    var dt = new Date();
-                    var age = (dt.getFullYear() - bd.getFullYear());
+               this.age = function () {
+                    var patient_age = new Date(this.birthDate);
+                    var currdate = Date.now();
+                    var difference = currdate - patient_age.getTime() ;
+                    var p_age =  Math.round(difference /(1 *31536000000 ));
+                    return p_age;
+                    
+                    
                 }
-
-            }
 
             // Functions 
             function createPatients(num)
